@@ -3,6 +3,9 @@
 
 #include "graphics.hpp"
 #include "widget.hpp"
+#include "scene.hpp"
+
+
 
 class window
 {
@@ -10,9 +13,11 @@ class window
         window();
         void event_loop();
         virtual void anEvent(std::string whatEvent){}
+        void clear_it();
 
     protected:
-        std::vector<widget*>  widgetek;
+        std::vector<widget*> widgetek;
+        std::vector<scene*> scenes;
 
     private:
 };

@@ -8,6 +8,11 @@ window::window()
     //ctor
 }
 
+void window::clear_it()
+{
+    gout << move_to(0,0) << color(0,0,0) << box(640,480);
+}
+
 void window::event_loop() {
     event ev;
     int focus = -1;
@@ -16,6 +21,7 @@ void window::event_loop() {
             w->which_hightlited(ev.pos_x, ev.pos_y);
         }*/
         //Egérkattintásra
+        clear_it();
         if (ev.type == ev_mouse && ev.button==btn_left) {
             for (size_t i=0;i<widgetek.size();i++) {
                 if (widgetek[i]->is_selected(ev.pos_x, ev.pos_y)) {

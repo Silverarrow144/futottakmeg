@@ -20,20 +20,39 @@ using namespace genv;
 class mainWindow : public window
 {
     public:
-    scene * fomenu;         /// F
-    scene * lovarda;        /// O
-    scene * legelo;         /// L
-    scene * versenypalya;   /// V
-    scene * naptar;         /// N
-    scene * bolt;           /// B
-    scene * menu;           /// M
+        mainWindow();
+    fomenu * f1;         /// F
+    /*lovarda * o1;        /// O
+    legelo * l1;         /// L
+    versenypalya * v1;   /// V
+    naptar * n1;         /// N
+    bolt * b1;           /// B
+    menu * m1;           /// M */
 
-    void whichToDraw(char sceneTipusa)
+    void whichToDraw(char sceneTipusa);
+
+
+
+
+
+
+};
+
+
+mainWindow::mainWindow()
+{
+    f1 = new fomenu(640,480,'F');
+    scenes.push_back(f1);
+
+
+}
+
+void whichToDraw(char sceneTipusa)
     {
         switch(sceneTipusa)
         {
         case 'F':
-            //drawthis
+            f1.draw();
             break;
         case 'O':
             //drawthis
@@ -55,15 +74,6 @@ class mainWindow : public window
 
 
 
-
-
-};
-
-
-
-
-
-
 /*void theWindow::fv(window *w) {
     theWindow * mw = dynamic_cast<theWindow*>(w);
     if (mw) {
@@ -77,8 +87,8 @@ int main()
     event ev;
     while (gin >> ev){
     gout.open(640,480);
-    //theWindow *TheWindow = new theWindow;
-    //TheWindow->event_loop();
+    mainWindow *TheWindow = new mainWindow;
+    TheWindow->event_loop();
     }
     return 0;
 }
