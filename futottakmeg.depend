@@ -1,0 +1,101 @@
+# depslib dependency file v1.0
+1525345301 source:c:\programozás\futottakmeg\dropdownbox.cpp
+	"dropDownBox.hpp"
+	"graphics.hpp"
+
+1525345273 c:\programozás\futottakmeg\dropdownbox.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	<string>
+	<iostream>
+	<vector>
+
+1525345242 c:\programozás\futottakmeg\widget.hpp
+	"graphics.hpp"
+	<vector>
+
+1525628883 source:c:\programozás\futottakmeg\inputbox.cpp
+	"inputBox.hpp"
+	"graphics.hpp"
+	<iostream>
+
+1525346705 c:\programozás\futottakmeg\inputbox.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	<string>
+	<iostream>
+	<vector>
+
+1525346136 source:c:\programozás\futottakmeg\justtext.cpp
+	"justText.hpp"
+	<string>
+	<iostream>
+
+1525345637 c:\programozás\futottakmeg\justtext.hpp
+	<string>
+	"widget.hpp"
+	"graphics.hpp"
+
+1525345301 source:c:\programozás\futottakmeg\numberbox.cpp
+	"numberBox.hpp"
+	"graphics.hpp"
+	<sstream>
+	<iostream>
+	<math.h>
+
+1525345273 c:\programozás\futottakmeg\numberbox.hpp
+	"graphics.hpp"
+	"widget.hpp"
+
+1525629624 source:c:\programozás\futottakmeg\submitbutton.cpp
+	"submitButton.hpp"
+	"graphics.hpp"
+	<iostream>
+
+1525629434 c:\programozás\futottakmeg\submitbutton.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	"window.hpp"
+	<functional>
+	<string>
+
+1526156338 c:\programozás\futottakmeg\window.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	"scene.hpp"
+
+1525345742 source:c:\programozás\futottakmeg\widget.cpp
+	"widget.hpp"
+	"graphics.hpp"
+
+1526153665 source:c:\programozás\futottakmeg\window.cpp
+	"window.hpp"
+	<vector>
+
+1526154795 source:c:\programozás\futottakmeg\main.cpp
+	"graphics.hpp"
+	"dropDownBox.hpp"
+	"inputBox.hpp"
+	"numberBox.hpp"
+	"submitButton.hpp"
+	"widget.hpp"
+	"window.hpp"
+	"justText.hpp"
+	"scene.hpp"
+	<iostream>
+	<vector>
+	<string>
+
+1526155314 source:c:\programozás\futottakmeg\scene.cpp
+	"scene.hpp"
+	"graphics.hpp"
+
+1526156069 c:\programozás\futottakmeg\scene.hpp
+	<string>
+	<functional>
+	"graphics.hpp"
+	"widget.hpp"
+	"window.hpp"
+	"graphics.hpp"
+	<vector>
+
