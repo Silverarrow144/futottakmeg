@@ -37,6 +37,56 @@ public:
 
 };
 
+class lovarda : public scene
+{
+public:
+    lovarda(int size_x, int size_y, char _tipusa);
+    virtual void draw();
+
+};
+
+class legelo : public scene
+{
+public:
+    legelo(int size_x, int size_y, char _tipusa);
+    virtual void draw();
+
+};
+
+class versenypalya : public scene
+{
+public:
+    versenypalya(int size_x, int size_y, char _tipusa);
+    virtual void draw();
+
+};
+
+class naptar : public scene
+{
+public:
+    naptar(int size_x, int size_y, char _tipusa);
+    virtual void draw();
+
+};
+
+class bolt : public scene
+{
+public:
+    bolt(int size_x, int size_y, char _tipusa);
+    virtual void draw();
+
+};
+
+class menu : public scene
+{
+protected:
+    int mx, my;
+public:
+    menu(int _mx, int _my, int size_x, int size_y, char _tipusa);
+    virtual void draw();
+
+};
+
 
 
 #endif // SCENE_HPP

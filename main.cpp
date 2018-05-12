@@ -22,12 +22,12 @@ class mainWindow : public window
     public:
         mainWindow();
     fomenu * f1;         /// F
-    /*lovarda * o1;        /// O
+    lovarda * o1;        /// O
     legelo * l1;         /// L
     versenypalya * v1;   /// V
     naptar * n1;         /// N
     bolt * b1;           /// B
-    menu * m1;           /// M */
+    menu * m1;           /// M
 
 //    void whichToDraw(char sceneTipusa);
 
@@ -42,16 +42,20 @@ class mainWindow : public window
 mainWindow::mainWindow()
 {
     f1 = new fomenu(640,480,'F');
+    o1 = new lovarda(640,380,'O');
+    l1 = new legelo(640,380,'L');
+    v1 = new versenypalya(640,380,'V');
+    n1 = new naptar(640,380,'N');
+    b1 = new bolt(640,380,'B');
+    m1 = new menu(0,380,640,100,'M');
+
     scenes.push_back(f1);
-    cout << f1->sxret();
-
-    //f1.draw();
-    /*switch(sceneTipusa)
-        {
-        case 'F':
-            f1.draw();
-            break;*/
-
+    scenes.push_back(o1);
+    scenes.push_back(l1);
+    scenes.push_back(v1);
+    scenes.push_back(n1);
+    scenes.push_back(b1);
+    scenes.push_back(m1);
 
 }
 
