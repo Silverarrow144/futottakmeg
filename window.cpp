@@ -63,13 +63,17 @@ void window::event_loop() {
             widgetek[i]->draw();
         }
 
-        scenes[0]->draw();
+        //scenes[0]->draw();
 
-        /*for (size_t i=0;i<scenes.size();i++) {
-            //if(scenes[i]->tip()){
-            scenes[i]->draw();
-            //}
-        }*/
+        for (size_t i=0;i<scenes.size();i++) {
+
+            if(scenes[i]->tip()==actualType){
+                scenes[i]->draw();
+            }
+            if(scenes[i]->tip()=='M' && actualType!='F' ){
+                scenes[i]->draw();
+            }
+        }
 
         gout << refresh;
 
