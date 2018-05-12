@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="futottakmeg" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/futottakmeg" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libgraphics.a" />
+					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libgraphicsd.a" />
+					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libSDL.dll.a" />
+					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libsdl_ttf.a" />
+					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libSDLmain.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/futottakmeg" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="dropDownBox.cpp" />
+		<Unit filename="dropDownBox.hpp" />
+		<Unit filename="inputBox.cpp" />
+		<Unit filename="inputBox.hpp" />
+		<Unit filename="justText.cpp" />
+		<Unit filename="justText.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="numberBox.cpp" />
+		<Unit filename="numberBox.hpp" />
+		<Unit filename="submitButton.cpp" />
+		<Unit filename="submitButton.hpp" />
+		<Unit filename="widget.cpp" />
+		<Unit filename="widget.hpp" />
+		<Unit filename="window.cpp" />
+		<Unit filename="window.hpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
