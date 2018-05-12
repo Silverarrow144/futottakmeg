@@ -68,11 +68,11 @@
 	"widget.hpp"
 	"graphics.hpp"
 
-1526153665 source:c:\programozás\futottakmeg\window.cpp
+1526158162 source:c:\programozás\futottakmeg\window.cpp
 	"window.hpp"
 	<vector>
 
-1526154795 source:c:\programozás\futottakmeg\main.cpp
+1526158954 source:c:\programozás\futottakmeg\main.cpp
 	"graphics.hpp"
 	"dropDownBox.hpp"
 	"inputBox.hpp"
@@ -86,16 +86,15 @@
 	<vector>
 	<string>
 
-1526155314 source:c:\programozás\futottakmeg\scene.cpp
+1526159632 source:c:\programozás\futottakmeg\scene.cpp
 	"scene.hpp"
 	"graphics.hpp"
+	<iostream>
 
-1526156069 c:\programozás\futottakmeg\scene.hpp
+1526159632 c:\programozás\futottakmeg\scene.hpp
 	<string>
 	<functional>
 	"graphics.hpp"
 	"widget.hpp"
-	"window.hpp"
-	"graphics.hpp"
 	<vector>
 

@@ -21,7 +21,7 @@ void window::event_loop() {
             w->which_hightlited(ev.pos_x, ev.pos_y);
         }*/
         //Egérkattintásra
-        clear_it();
+        //clear_it();
         if (ev.type == ev_mouse && ev.button==btn_left) {
             for (size_t i=0;i<widgetek.size();i++) {
                 if (widgetek[i]->is_selected(ev.pos_x, ev.pos_y)) {
@@ -62,6 +62,14 @@ void window::event_loop() {
         for (size_t i=0;i<widgetek.size();i++) {
             widgetek[i]->draw();
         }
+
+        scenes[0]->draw();
+
+        /*for (size_t i=0;i<scenes.size();i++) {
+            //if(scenes[i]->tip()){
+            scenes[i]->draw();
+            //}
+        }*/
 
         gout << refresh;
 

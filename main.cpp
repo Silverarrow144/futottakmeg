@@ -29,7 +29,7 @@ class mainWindow : public window
     bolt * b1;           /// B
     menu * m1;           /// M */
 
-    void whichToDraw(char sceneTipusa);
+//    void whichToDraw(char sceneTipusa);
 
 
 
@@ -43,11 +43,19 @@ mainWindow::mainWindow()
 {
     f1 = new fomenu(640,480,'F');
     scenes.push_back(f1);
+    cout << f1->sxret();
+
+    //f1.draw();
+    /*switch(sceneTipusa)
+        {
+        case 'F':
+            f1.draw();
+            break;*/
 
 
 }
 
-void whichToDraw(char sceneTipusa)
+/*void whichToDraw(char sceneTipusa)
     {
         switch(sceneTipusa)
         {
@@ -70,7 +78,7 @@ void whichToDraw(char sceneTipusa)
             //drawthis
             break;
         }
-    }
+    }*/
 
 
 
