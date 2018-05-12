@@ -48,6 +48,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="numberBox.cpp" />
 		<Unit filename="numberBox.hpp" />
+		<Unit filename="scene.cpp" />
+		<Unit filename="scene.hpp" />
 		<Unit filename="submitButton.cpp" />
 		<Unit filename="submitButton.hpp" />
 		<Unit filename="widget.cpp" />
