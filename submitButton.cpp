@@ -39,7 +39,7 @@ void submitButton::draw() {
     gout << move_to(wx+wsx/2-gout.twidth(buttonLabel)/2, wy+20)
          << text(buttonLabel);*/
     gout << move_to(wx,wy) << color(200,200,200) << box(wsx,wsy);
-    gout << move_to(wx+10,wy+wsy-2) << color(0,0,0) << text(buttonLabel);
+    gout << move_to(wx+10,wy+wsy-5) << color(0,0,0) << text(buttonLabel);
 
 }
 
