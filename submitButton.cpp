@@ -6,14 +6,14 @@ using namespace genv;
 
 ///Õsbutton
 
-submitButton::submitButton(int x, int y, int sx, int sy, std::string s)
-    : widget(x,y,sx,sy), buttonLabel(s)
+submitButton::submitButton(int x, int y, int sx, int sy, char whichScene, std::string s)
+    : widget(x,y,sx,sy,whichScene), buttonLabel(s)
 {
-    //ctor
+
 }
 
 ///Szöveg button
-
+/*
 textButton::textButton(window * parent, int x, int y, int sx, int sy, std::string s, std::string whatEvent)
     : submitButton(x,y,sx,sy,s),
     ostul(parent),
@@ -21,15 +21,13 @@ textButton::textButton(window * parent, int x, int y, int sx, int sy, std::strin
 {
 }
 
-
 void textButton::action() {
     ostul->anEvent(_whatEvent);
-}
+}*/
 
 void submitButton::handle(genv::event ev) {
-    if (ev.keycode==' ' || is_selected(ev.pos_x, ev.pos_y)) {
+    if (is_selected(ev.pos_x, ev.pos_y)) {
         action();
-        //gout << dot;
     }
 }
 

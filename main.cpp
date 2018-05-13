@@ -20,7 +20,9 @@ using namespace genv;
 class mainWindow : public window
 {
     public:
-        mainWindow();
+    mainWindow();
+
+    ///Képernyõk
     fomenu * f1;         /// F
     lovarda * o1;        /// O
     legelo * l1;         /// L
@@ -29,11 +31,68 @@ class mainWindow : public window
     bolt * b1;           /// B
     menu * m1;           /// M
 
-//    void whichToDraw(char sceneTipusa);
+    ///Fõmenü
+    fButton * folytat;
+    fButton * ujjatek;
+    fButton * mentes;
+    fButton * kilepes;
 
+    ///Menü
+    fButton * fom;
+    fButton * lov;
+    fButton * leg;
+    fButton * ver;
+    fButton * nap;
+    fButton * bol;
 
+    fButton * napVege;
 
+    ///Lovarda
+    fButton * jobbNyil;
+    fButton * balNyil;
 
+    numberBox * szena;
+    fButton * etetes;
+    fButton * itatas;
+    fButton * csutakolas;
+    fButton * patakaparas;
+    fButton * kialmozas;
+
+    dropDownBox * nyereg;
+    dropDownBox * kantar;
+    dropDownBox * labvedo;
+    dropDownBox * gyogyszer;
+    fButton * gyogyit;
+
+    justText * tul;
+
+    ///Legelõ
+    dropDownBox * paciEdzeni;
+    dropDownBox * melyEdzes;
+    fButton * acceptEdzes;
+    fButton * lovagoltatas;
+
+    ///Versenypálya
+    dropDownBox * paciVersenyre;
+    fButton * acceptVerseny;
+    justText * nextVerseny;
+    justText * eredmeny;
+
+    ///Naptár
+    fButton * kinezet;
+    justText * verseny;
+    justText * paciDolga;
+
+    ///Bolt
+    //Side menu
+    dropDownBox * nyeregVenni;
+    dropDownBox * kantarVenni;
+    dropDownBox * labvedoVenni;
+    numberBox * szenaVenni;
+    dropDownBox * gyogyVenni;
+    numberBox * loVenni;
+
+    fButton * megvenni;
 
 
 };
@@ -41,6 +100,7 @@ class mainWindow : public window
 
 mainWindow::mainWindow()
 {
+    ///Képernyõk
     f1 = new fomenu(640,480,'F');
     o1 = new lovarda(640,380,'O');
     l1 = new legelo(640,380,'L');
@@ -56,6 +116,27 @@ mainWindow::mainWindow()
     scenes.push_back(n1);
     scenes.push_back(b1);
     scenes.push_back(m1);
+
+    ///Fõmenü widgetei
+
+
+
+    ///Lenti menü widgetei
+
+
+    ///Lovarda widgetei
+
+
+    ///Legelõ widgetei
+
+
+    ///Versenypálya widgetei
+
+
+    ///Naptár widgetei
+
+
+    ///Bolt widgetei
 
 }
 

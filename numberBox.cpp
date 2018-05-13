@@ -6,8 +6,8 @@
 
 using namespace genv;
 
-numberBox::numberBox(int x, int y, int sx, int sy, int iMin, int iMax)
-    : widget(x,y,sx,sy), iMin(iMin), iMax(iMax)
+numberBox::numberBox(int x, int y, int sx, int sy, char whichScene, int iMin, int iMax)
+    : widget(x,y,sx,sy,whichScene), iMin(iMin), iMax(iMax)
 {
     cNumber=0;
     maxSzam=(wsx-35)/9;

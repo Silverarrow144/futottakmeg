@@ -8,7 +8,7 @@ class justText : public widget {
 protected:
     std::string _s;
 public:
-    justText(int x, int y, int sx, int sy, std::string s);
+    justText(int x, int y, int sx, int sy, char whichScene, std::string s);
     virtual void draw();
     virtual bool focusable() const {return false;}
     void setText(std::string s) {_s=s;}

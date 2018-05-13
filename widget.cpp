@@ -2,7 +2,7 @@
 #include "graphics.hpp"
 using namespace genv;
 
-widget::widget(int x, int y, int sx, int sy) : wx(x), wy(y), wsx(sx), wsy(sy)
+widget::widget(int x, int y, int sx, int sy, char whichScene) : wx(x), wy(y), wsx(sx), wsy(sy)
 {
     r=255;
     g=255;

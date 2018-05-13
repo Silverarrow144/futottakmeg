@@ -41,6 +41,8 @@
 		</Compiler>
 		<Unit filename="dropDownBox.cpp" />
 		<Unit filename="dropDownBox.hpp" />
+		<Unit filename="gamemaster.cpp" />
+		<Unit filename="gamemaster.hpp" />
 		<Unit filename="inputBox.cpp" />
 		<Unit filename="inputBox.hpp" />
 		<Unit filename="justText.cpp" />

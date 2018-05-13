@@ -4,8 +4,8 @@
 
 using namespace genv;
 
-inputBox::inputBox(int x, int y, int sx, int sy, std::string _s)
-    : widget(x,y,sx,sy)
+inputBox::inputBox(int x, int y, int sx, int sy, char whichScene, std::string _s)
+    : widget(x,y,sx,sy, whichScene)
 {
     inbox="";
     maxLength=sx/9;

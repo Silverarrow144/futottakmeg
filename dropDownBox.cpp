@@ -3,8 +3,8 @@
 
 using namespace genv;
 
-dropDownBox::dropDownBox(int x, int y, int sx, int sy, std::vector<std::string> v)
-    : widget(x,y,sx,sy), v(v)
+dropDownBox::dropDownBox(int x, int y, int sx, int sy, char whichScene, std::vector<std::string> v)
+    : widget(x,y,sx,sy,whichScene), v(v)
 {
     _dropdown=false;
     inbox=v[0];

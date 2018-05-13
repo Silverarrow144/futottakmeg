@@ -1,78 +1,78 @@
 # depslib dependency file v1.0
-1525345301 source:c:\programozás\futottakmeg\dropdownbox.cpp
+1526209336 source:c:\programozás\futottakmeg\dropdownbox.cpp
 	"dropDownBox.hpp"
 	"graphics.hpp"
 
-1525345273 c:\programozás\futottakmeg\dropdownbox.hpp
+1526209134 c:\programozás\futottakmeg\dropdownbox.hpp
 	"graphics.hpp"
 	"widget.hpp"
 	<string>
 	<iostream>
 	<vector>
 
-1525345242 c:\programozás\futottakmeg\widget.hpp
+1526209028 c:\programozás\futottakmeg\widget.hpp
 	"graphics.hpp"
 	<vector>
 
-1525628883 source:c:\programozás\futottakmeg\inputbox.cpp
+1526209209 source:c:\programozás\futottakmeg\inputbox.cpp
 	"inputBox.hpp"
 	"graphics.hpp"
 	<iostream>
 
-1525346705 c:\programozás\futottakmeg\inputbox.hpp
+1526209134 c:\programozás\futottakmeg\inputbox.hpp
 	"graphics.hpp"
 	"widget.hpp"
 	<string>
 	<iostream>
 	<vector>
 
-1525346136 source:c:\programozás\futottakmeg\justtext.cpp
+1526209219 source:c:\programozás\futottakmeg\justtext.cpp
 	"justText.hpp"
 	<string>
 	<iostream>
 
-1525345637 c:\programozás\futottakmeg\justtext.hpp
+1526209134 c:\programozás\futottakmeg\justtext.hpp
 	<string>
 	"widget.hpp"
 	"graphics.hpp"
 
-1525345301 source:c:\programozás\futottakmeg\numberbox.cpp
+1526209226 source:c:\programozás\futottakmeg\numberbox.cpp
 	"numberBox.hpp"
 	"graphics.hpp"
 	<sstream>
 	<iostream>
 	<math.h>
 
-1525345273 c:\programozás\futottakmeg\numberbox.hpp
+1526209134 c:\programozás\futottakmeg\numberbox.hpp
 	"graphics.hpp"
 	"widget.hpp"
 
-1525629624 source:c:\programozás\futottakmeg\submitbutton.cpp
+1526209232 source:c:\programozás\futottakmeg\submitbutton.cpp
 	"submitButton.hpp"
 	"graphics.hpp"
 	<iostream>
 
-1525629434 c:\programozás\futottakmeg\submitbutton.hpp
+1526209134 c:\programozás\futottakmeg\submitbutton.hpp
 	"graphics.hpp"
 	"widget.hpp"
 	"window.hpp"
 	<functional>
 	<string>
 
-1526161939 c:\programozás\futottakmeg\window.hpp
+1526208360 c:\programozás\futottakmeg\window.hpp
 	"graphics.hpp"
 	"widget.hpp"
 	"scene.hpp"
 
-1525345742 source:c:\programozás\futottakmeg\widget.cpp
+1526209029 source:c:\programozás\futottakmeg\widget.cpp
 	"widget.hpp"
 	"graphics.hpp"
 
-1526161916 source:c:\programozás\futottakmeg\window.cpp
+1526211409 source:c:\programozás\futottakmeg\window.cpp
 	"window.hpp"
 	<vector>
 
-1526161377 source:c:\programozás\futottakmeg\main.cpp
+1526208036 source:c:\programozás\futottakmeg\main.cpp
 	"graphics.hpp"
 	"dropDownBox.hpp"
 	"inputBox.hpp"
@@ -97,4 +97,9 @@
 	"graphics.hpp"
 	"widget.hpp"
 	<vector>
+
+1526205838 source:c:\programozás\futottakmeg\gamemaster.cpp
+	"gamemaster.hpp"
+
+1526205838 c:\programozás\futottakmeg\gamemaster.hpp
 
