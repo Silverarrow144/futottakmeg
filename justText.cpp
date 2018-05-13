@@ -4,7 +4,7 @@
 using namespace std;
 using namespace genv;
 
-justText::justText(int x, int y, int sx, int sy, char whichScene, string s) : widget(x,y,sx,sy,whichScene) {
+justText::justText(int x, int y, int sx, int sy, char _whichScene, string s) : widget(x,y,sx,sy,_whichScene) {
     _s=s;
 }
 void justText::draw() {

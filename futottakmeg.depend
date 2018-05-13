@@ -103,3 +103,109 @@
 
 1526205838 c:\programozás\futottakmeg\gamemaster.hpp
 
+1526219846 source:c:\users\hipergamer\downloads\futottakmeg-master\dropdownbox.cpp
+	"dropDownBox.hpp"
+	"graphics.hpp"
+
+1526219846 c:\users\hipergamer\downloads\futottakmeg-master\dropdownbox.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	<string>
+	<iostream>
+	<vector>
+
+1526224038 c:\users\hipergamer\downloads\futottakmeg-master\widget.hpp
+	"graphics.hpp"
+	<vector>
+
+1526219846 source:c:\users\hipergamer\downloads\futottakmeg-master\inputbox.cpp
+	"inputBox.hpp"
+	"graphics.hpp"
+	<iostream>
+
+1526219846 c:\users\hipergamer\downloads\futottakmeg-master\inputbox.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	<string>
+	<iostream>
+	<vector>
+
+1526219846 source:c:\users\hipergamer\downloads\futottakmeg-master\justtext.cpp
+	"justText.hpp"
+	<string>
+	<iostream>
+
+1526219846 c:\users\hipergamer\downloads\futottakmeg-master\justtext.hpp
+	<string>
+	"widget.hpp"
+	"graphics.hpp"
+
+1526219846 source:c:\users\hipergamer\downloads\futottakmeg-master\numberbox.cpp
+	"numberBox.hpp"
+	"graphics.hpp"
+	<sstream>
+	<iostream>
+	<math.h>
+
+1526220155 c:\users\hipergamer\downloads\futottakmeg-master\numberbox.hpp
+	"graphics.hpp"
+	"widget.hpp"
+
+1526215226 source:c:\users\hipergamer\downloads\futottakmeg-master\scene.cpp
+	"scene.hpp"
+	"graphics.hpp"
+	<iostream>
+
+1526215226 c:\users\hipergamer\downloads\futottakmeg-master\scene.hpp
+	<string>
+	<functional>
+	"graphics.hpp"
+	"widget.hpp"
+	<vector>
+
+1526224726 source:c:\users\hipergamer\downloads\futottakmeg-master\submitbutton.cpp
+	"submitButton.hpp"
+	"graphics.hpp"
+	<iostream>
+
+1526224357 c:\users\hipergamer\downloads\futottakmeg-master\submitbutton.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	"window.hpp"
+	<functional>
+	<string>
+
+1526215226 c:\users\hipergamer\downloads\futottakmeg-master\window.hpp
+	"graphics.hpp"
+	"widget.hpp"
+	"scene.hpp"
+
+1526223952 source:c:\users\hipergamer\downloads\futottakmeg-master\widget.cpp
+	"widget.hpp"
+	"graphics.hpp"
+
+1526224567 source:c:\users\hipergamer\downloads\futottakmeg-master\window.cpp
+	"window.hpp"
+	<vector>
+	<iostream>
+
+1526218068 source:c:\users\hipergamer\downloads\futottakmeg-master\gamemaster.cpp
+	"gamemaster.hpp"
+
+1526218068 c:\users\hipergamer\downloads\futottakmeg-master\gamemaster.hpp
+
+1526224477 source:c:\users\hipergamer\downloads\futottakmeg-master\main.cpp
+	"graphics.hpp"
+	"dropDownBox.hpp"
+	"inputBox.hpp"
+	"numberBox.hpp"
+	"submitButton.hpp"
+	"widget.hpp"
+	"window.hpp"
+	"justText.hpp"
+	"scene.hpp"
+	"gamemaster.hpp"
+	<iostream>
+	<vector>
+	<string>
+

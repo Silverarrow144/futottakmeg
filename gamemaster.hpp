@@ -6,7 +6,6 @@ class gamemaster
 {
     public:
         gamemaster();
-        virtual ~gamemaster();
 
     protected:
 

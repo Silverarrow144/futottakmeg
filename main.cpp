@@ -7,6 +7,7 @@
 #include "window.hpp"
 #include "justText.hpp"
 #include "scene.hpp"
+#include "gamemaster.hpp"
 
 #include <iostream>
 #include <vector>
@@ -95,6 +96,7 @@ class mainWindow : public window
     fButton * megvenni;
 
 
+    gamemaster * GM;
 };
 
 
@@ -109,6 +111,7 @@ mainWindow::mainWindow()
     b1 = new bolt(640,380,'B');
     m1 = new menu(0,380,640,100,'M');
 
+    //cout << f1->tipusa << endl;
     scenes.push_back(f1);
     scenes.push_back(o1);
     scenes.push_back(l1);
@@ -117,9 +120,15 @@ mainWindow::mainWindow()
     scenes.push_back(b1);
     scenes.push_back(m1);
 
+    //cout << scenes[0]->
+
     ///Fõmenü widgetei
-
-
+    folytat = new fButton(270,80,100,20,'F',"Folytatás",[this](){
+                          this->actualType='O';
+                          });
+    //cout << this->actualType;
+    widgetek.push_back(folytat);
+    //cout << widgetek[0]->_whichScene;
 
     ///Lenti menü widgetei
 

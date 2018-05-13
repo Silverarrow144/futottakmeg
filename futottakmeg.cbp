@@ -15,11 +15,11 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libgraphics.a" />
-					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libgraphicsd.a" />
-					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libSDL.dll.a" />
-					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libsdl_ttf.a" />
-					<Add library="../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libSDLmain.a" />
+					<Add library="../../../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libgraphics.a" />
+					<Add library="../../../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libgraphicsd.a" />
+					<Add library="../../../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libSDL.dll.a" />
+					<Add library="../../../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libsdl_ttf.a" />
+					<Add library="../../../../Program Files (x86)/CodeBlocks/GraphicsKit/lib/libSDLmain.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">

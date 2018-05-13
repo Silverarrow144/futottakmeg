@@ -10,7 +10,7 @@
 class inputBox : public widget
 {
     public:
-        inputBox(int x, int y, int sx, int sy, char whichScene, std::string s);
+        inputBox(int x, int y, int sx, int sy, char _whichScene, std::string s);
         virtual void draw();
         virtual void handle(genv::event ev);
         virtual bool is_selected(int mouse_x, int mouse_y);
