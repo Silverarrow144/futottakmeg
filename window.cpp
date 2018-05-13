@@ -1,6 +1,8 @@
 #include "window.hpp"
 #include <vector>
+#include <iostream>
 using namespace genv;
+using namespace std;
 
 window::window()
 {
@@ -22,12 +24,10 @@ void window::event_loop() {
     for (size_t i=0;i<widgetek.size();i++){
         widgetek[i]->handle(ev);
     }
+
         ///Kirajzolás
 
-            ///Widgetek
-        for (size_t i=0;i<widgetek.size();i++) {
-            widgetek[i]->draw();
-        }
+
 
             ///Képernyok
         for (size_t i=0;i<scenes.size();i++) {
@@ -38,6 +38,14 @@ void window::event_loop() {
             if(scenes[i]->tip()=='M' && actualType!='F' ){
                 scenes[i]->draw();
             }
+        }
+
+            ///Widgetek
+        for (size_t i=0;i<widgetek.size();i++) {
+            if(widgetek[i]->getScene()==actualType){
+            widgetek[i]->draw();
+            }
+            //cout << widgetek[i]->_whichScene;
         }
 
 

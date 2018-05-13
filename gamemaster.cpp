@@ -5,7 +5,3 @@ gamemaster::gamemaster()
     //ctor
 }
 
-gamemaster::~gamemaster()
-{
-    //dtor
-}

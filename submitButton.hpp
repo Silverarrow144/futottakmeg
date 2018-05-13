@@ -11,7 +11,7 @@
 class submitButton : public widget
 {
     public:
-        submitButton(int x, int y, int sx, int sy, char whichScene, std::string s);
+        submitButton(int x, int y, int sx, int sy, char _whichScene, std::string s);
         virtual void draw();
         virtual void handle(genv::event ev);
         virtual void action()=0;
@@ -51,10 +51,12 @@ public:
 class fButton : public submitButton {
     std::function<void()> _functor;
 public:
-    FunctorButton(int x, int y, int sx, int sy, char whichScene,
-                   std::string s, std::function<void()> functor);
-    void action();
+    fButton(int x, int y, int sx, int sy, char _whichScene, std::string s, std::function<void()> functor);
+    void action(){}
+    void handle(genv::event ev);
 };
+
+
 
 
 ///Egyéb
