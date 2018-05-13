@@ -8,15 +8,11 @@
 #include "justText.hpp"
 #include "scene.hpp"
 #include "gamemaster.hpp"
-
 #include <iostream>
 #include <vector>
 #include <string>
-
 using namespace std;
 using namespace genv;
-
-
 
 class mainWindow : public window
 {
@@ -35,7 +31,7 @@ class mainWindow : public window
     ///Fõmenü
     fButton * folytat;
     fButton * ujjatek;
-    fButton * mentes;
+    //fButton * mentes;
     //fButton * kilepes;
 
     ///Menü
@@ -52,7 +48,6 @@ class mainWindow : public window
     fButton * jobbNyil;
     fButton * balNyil;
 
-    numberBox * szena;
     fButton * etetes;
     fButton * itatas;
     fButton * csutakolas;
@@ -80,21 +75,19 @@ class mainWindow : public window
     justText * eredmeny;
 
     ///Naptár
-    fButton * kinezet;
     justText * verseny;
     justText * paciDolga;
 
     ///Bolt
-    //Side menu
     dropDownBox * nyeregVenni;
     dropDownBox * kantarVenni;
     dropDownBox * labvedoVenni;
     numberBox * szenaVenni;
     dropDownBox * gyogyVenni;
-    numberBox * loVenni;
+    inputBox * loNeve;
+    fButton * loVenni;
 
     fButton * megvenni;
-
 
     gamemaster * GM;
 };
@@ -102,6 +95,10 @@ class mainWindow : public window
 
 mainWindow::mainWindow()
 {
+    GM = new gamemaster();
+    vector<string> vv1 = {"Válassz lovat"};
+    vector<string> vv2 = {"Válassz edzést"};
+
     int x1=640;
     int y1=380;
     ///Képernyõk
@@ -113,7 +110,6 @@ mainWindow::mainWindow()
     b1 = new bolt(x1,y1,'B');
     m1 = new menu(0,380,x1,100,'M');
 
-    //cout << f1->tipusa << endl;
     scenes.push_back(f1);
     scenes.push_back(o1);
     scenes.push_back(l1);
@@ -122,20 +118,17 @@ mainWindow::mainWindow()
     scenes.push_back(b1);
     scenes.push_back(m1);
 
-    //cout << scenes[0]->
-
     ///Fõmenü widgetei
-    folytat = new fButton(270,80,100,20,'F',"Folytatás",[this](){this->actualType='O';});
-    ujjatek = new fButton(270,120,100,20,'F',"Új játék",[this](){this->actualType='O';});
-    mentes = new fButton(270,160,100,20,'F',"Mentés",[this](){
-                         //this->actualType='O';
+    folytat = new fButton(270,150,100,20,'F',"Folytatás",[this](){this->actualType='O';});
+    ujjatek = new fButton(270,190,100,20,'F',"Új játék",[this](){this->actualType='O';});
+    /*mentes = new fButton(270,230,100,20,'F',"Mentés",[this](){
                          cout << "Itt kell a file-ba iratást meghívni, közvetve";
-                         });
+                         });*/
     //kilepes = new fButton(270,200,100,20,'F',"Kilépés",[this](){this->iNeedToStop=true;cout << this->iNeedToStop;});
 
     widgetek.push_back(folytat);
     widgetek.push_back(ujjatek);
-    widgetek.push_back(mentes);
+    //widgetek.push_back(mentes);
     //widgetek.push_back(kilepes);
 
     ///Lenti menü widgetei
@@ -157,62 +150,105 @@ mainWindow::mainWindow()
     widgetek.push_back(bol);
 
 
-    //napVege = new fButton();
+    napVege = new fButton(550,420,80,40,'M',"Nap vége",[this](){});
+
+    widgetek.push_back(napVege);
 
     ///Lovarda widgetei
+    jobbNyil = new fButton(500,230,20,20,'O',">",[this](){});
+    balNyil = new fButton(200,230,20,20,'O',"<",[this](){});
+
+    widgetek.push_back(jobbNyil);
+    widgetek.push_back(balNyil);
+
+    etetes = new fButton(50,200,100,20,'O',"Etetés",[this](){});
+    itatas = new fButton(50,230,100,20,'O',"Itatás",[this](){});
+    csutakolas = new fButton(50,260,100,20,'O',"Csutakolás",[this](){});
+    patakaparas = new fButton(50,290,100,20,'O',"Patakaparás",[this](){});
+    kialmozas = new fButton(50,320,100,20,'O',"Kialmozás",[this](){});
+
+    widgetek.push_back(etetes);
+    widgetek.push_back(itatas);
+    widgetek.push_back(csutakolas);
+    widgetek.push_back(patakaparas);
+    widgetek.push_back(kialmozas);
+
+    nyereg = new dropDownBox(20,20,100,20,'O',vv1);
+    kantar = new dropDownBox(130,20,100,20,'O',vv1);
+    labvedo = new dropDownBox(240,20,100,20,'O',vv1);
+    gyogyszer = new dropDownBox(350,20,100,20,'O',vv1);
+    gyogyit = new fButton(50,350,100,20,'O',"Gyógyít",[this](){});
+
+    widgetek.push_back(nyereg);
+    widgetek.push_back(kantar);
+    widgetek.push_back(labvedo);
+    widgetek.push_back(gyogyszer);
+    widgetek.push_back(gyogyit);
+
+    tul = new justText(500,20,150,20,'O',"EZ");
+
+    widgetek.push_back(tul);
+
 
 
     ///Legelõ widgetei
+    paciEdzeni = new dropDownBox(20,20,150,20,'L',vv1);
+    melyEdzes = new dropDownBox(180,20,150,20,'L',vv2);
+    acceptEdzes = new fButton(340,20,150,20,'L',"Edzés",[this](){});
+    lovagoltatas = new fButton(50,300,150,20,'L',"Lovagoltatás",[this](){});
 
+    widgetek.push_back(paciEdzeni);
+    widgetek.push_back(melyEdzes);
+    widgetek.push_back(acceptEdzes);
+    widgetek.push_back(lovagoltatas);
 
     ///Versenypálya widgetei
+    paciVersenyre = new dropDownBox(20,20,150,20,'V',vv1);
+    acceptVerseny = new fButton(340,20,150,20,'V',"Verseny",[this](){});
+    nextVerseny = new justText(400,200,150,20,'V',"EZ");
+    eredmeny = new justText(400,300,150,20,'V',"AZ");
 
+    widgetek.push_back(paciVersenyre);
+    widgetek.push_back(acceptVerseny);
+    widgetek.push_back(nextVerseny);
+    widgetek.push_back(eredmeny);
 
     ///Naptár widgetei
+    verseny = new justText(20,20,150,20,'N',"AZ");
+    paciDolga = new justText(20,200,150,20,'N',"AZ");
 
+    widgetek.push_back(verseny);
+    widgetek.push_back(paciDolga);
 
     ///Bolt widgetei
+    nyeregVenni = new dropDownBox(20,20,100,20,'B',vv1);
+    kantarVenni = new dropDownBox(130,20,100,20,'B',vv1);
+    labvedoVenni = new dropDownBox(240,20,100,20,'B',vv1);
+    szenaVenni = new numberBox(130,200,150,20,'B',1,100);
+    gyogyVenni = new dropDownBox(350,20,100,20,'B',vv1);
+    loNeve = new inputBox(20,350,100,20,'B',"");
+    loVenni = new fButton(200,350,100,20,'B',"Lóvásárlás",[this](){});
 
+    megvenni = new fButton(340,300,100,20,'B',"Vásárlás",[this](){});
+
+    widgetek.push_back(nyeregVenni);
+    widgetek.push_back(kantarVenni);
+    widgetek.push_back(labvedoVenni);
+    widgetek.push_back(szenaVenni);
+    widgetek.push_back(gyogyVenni);
+    widgetek.push_back(loNeve);
+    widgetek.push_back(loVenni);
+
+    widgetek.push_back(megvenni);
 }
 
-/*void whichToDraw(char sceneTipusa)
-    {
-        switch(sceneTipusa)
-        {
-        case 'F':
-            f1.draw();
-            break;
-        case 'O':
-            //drawthis
-            break;
-        case 'L':
-            //drawthis
-            break;
-        case 'V':
-            //drawthis
-            break;
-        case 'N':
-            //drawthis
-            break;
-        case 'B':
-            //drawthis
-            break;
-        }
-    }*/
 
-
-
-/*void theWindow::fv(window *w) {
-    theWindow * mw = dynamic_cast<theWindow*>(w);
-    if (mw) {
-        mw->valami();
-    }
-}*/
 
 
 int main()
 {
     event ev;
+    //PlaySound(TEXT("irish.mp3"), NULL, SND_FILENAME);
     while (gin >> ev ){
         gout.open(640,480);
         mainWindow *TheWindow = new mainWindow;

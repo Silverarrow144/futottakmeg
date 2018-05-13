@@ -1,6 +1,7 @@
 #include "scene.hpp"
 #include "graphics.hpp"
 #include <iostream>
+#include <fstream>
 
 using namespace genv;
 using namespace std;
@@ -23,12 +24,58 @@ menu::menu(int _mx, int _my, int size_x, int size_y, char _tipusa) : mx(_mx), my
 
 void fomenu::draw()
 {
+    ifstream cim;
+    cim.open("fcim.kep");
+
+    int kep_x, kep_y;
+    cim >> kep_x >> kep_y;
+
+    canvas kep;
+    kep.open(kep_x,kep_y);
+    kep.transparent(true);
+
+    for(int y=0;y<kep_y;y++)
+    {
+        for(int x=0;x<kep_x;x++)
+        {
+            int r,g,b;
+            cim >> r >> g >> b;
+            kep << color(r,g,b) << move_to(x,y) << dot;
+        }
+    }
+
     gout << move_to(x,y) << color(100,100,255) << box(sx, sy/2-1);
     gout << move_to(x,sy/2) << color(0,150,0) << box(sx, sy/2);
+
+    gout << stamp(kep,10,0);
 }
 
 void lovarda::draw(){
+    ifstream file1;
+    file1.open("vl2.kep");
+
+    int kep_x, kep_y;
+    file1 >> kep_x >> kep_y;
+
+    canvas kep;
+    kep.open(kep_x,kep_y);
+    kep.transparent(true);
+
+    for(int y=0;y<kep_y;y++)
+    {
+        for(int x=0;x<kep_x;x++)
+        {
+            int r,g,b;
+            file1 >> r >> g >> b;
+            kep << color(r,g,b) << move_to(x,y) << dot;
+        }
+    }
+
+
+
     gout << move_to(0,0) << color(155,100,0) << box(sx, sy);
+
+    gout << stamp(kep,260,150);
 }
 
 void legelo::draw(){
@@ -49,5 +96,4 @@ void bolt::draw(){
 
 void menu::draw(){
     gout << move_to(mx,my) << color(0,0,200) << box(sx, sy);
-    //cout << mx << ' ' << my << endl;
 }

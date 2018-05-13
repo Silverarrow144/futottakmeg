@@ -17,16 +17,11 @@ void window::event_loop() {
     event ev;
 
     while(gin >> ev){
-
-
     for (size_t i=0;i<widgetek.size();i++){
         widgetek[i]->handle(ev);
     }
-
         ///Kirajzolás
-
         clear_it();
-
             ///Képernyok
         for (size_t i=0;i<scenes.size();i++) {
 
@@ -47,11 +42,6 @@ void window::event_loop() {
                 widgetek[i]->draw();
             }
         }
-
-
-
         gout << refresh;
-
-
     }
 }

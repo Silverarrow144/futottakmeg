@@ -13,5 +13,5 @@ void justText::draw() {
 }
 
 void justText::handle(event ev) {
-    //cout << ' ';
+
 }

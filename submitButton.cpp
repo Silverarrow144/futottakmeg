@@ -12,19 +12,6 @@ submitButton::submitButton(int x, int y, int sx, int sy, char _whichScene, std::
 
 }
 
-///Szöveg button
-/*
-textButton::textButton(window * parent, int x, int y, int sx, int sy, std::string s, std::string whatEvent)
-    : submitButton(x,y,sx,sy,s),
-    ostul(parent),
-    _whatEvent(whatEvent)
-{
-}
-
-void textButton::action() {
-    ostul->anEvent(_whatEvent);
-}*/
-
 void submitButton::handle(genv::event ev) {
     if (is_selected(ev.pos_x, ev.pos_y)) {
         action();
@@ -52,9 +39,3 @@ void fButton::handle(genv::event ev) {
         this->_functor();
     }
 }
-
-/*void fButton::draw()
-{
-    gout << move_to(wx,wy) << color(200,200,200) << box(wsx,wsy);
-    gout << move_to(wx+5,wy+wsy-2) << color(0,0,0) << text(buttonLabel);
-}*/

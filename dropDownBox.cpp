@@ -9,7 +9,6 @@ dropDownBox::dropDownBox(int x, int y, int sx, int sy, char _whichScene, std::ve
     _dropdown=false;
     inbox=v[0];
     w_h=-1;
-    b_h=-1;
     dropLength=5*21;
     theFirst=0;
 }
@@ -31,24 +30,7 @@ void dropDownBox::which_hightlited(int mouse_x, int mouse_y)
 }
 
 void dropDownBox::draw() {
-    if (w_h>-1)
-    {
-        b_h=w_h+theFirst;
-    }
 
-    ///Doboz + szöveg
-    if (in_focus==false)
-    {
-        _dropdown=false;
-    }
-    if(in_focus)
-    {
-        gout << color(r,g,0);
-    }
-    else
-    {
-        gout << color(r,g,b);
-    }
     gout << move_to(wx, wy) << box(wsx, wsy);
     gout << move_to(wx+2, wy+2) << color(170,170,170) << box(wsx-4, wsy-4);
     gout << color(0,0,0) << move_to(wx+15,wy+20) << text(inbox);
@@ -82,36 +64,15 @@ void dropDownBox::draw() {
             gout << move_to(wx+2,wy+wsy+3+w_h*20) << box(wsx-4,22);
             gout << color(255,255,255) << move_to(wx+5,wy+wsy+20+w_h*20) << text(v[w_h+theFirst]);
         }
-        if(b_h>-1)
-        {
-            gout << color(0,0,150);
-            gout << move_to(wx+2,wy+wsy+3+(b_h-theFirst)*20) << box(wsx-4,22);
-            gout << color(255,255,255) << move_to(wx+5,wy+wsy+20+(b_h-theFirst)*20) << text(v[b_h]);
-        }
+
     }
-    else
-    {
-        gout << color(0,0,0) << move_to(wx,wy+wsy+1) << box(wsx+1,dropLength+1);
-    }
+
 }
 
 void dropDownBox::handle(event ev)
 {
     ///Kattintásra lenyílás
     if ( ( (ev.button==btn_left) && (ev.pos_x>wx+wsx-18) && (ev.pos_x<wx+wsx) && (ev.pos_y>wy) && (ev.pos_y<wy+wsy)  ) )
-    {
-        if (_dropdown)
-        {
-            _dropdown=false;
-        }
-        else
-        {
-            _dropdown=true;
-        }
-    }
-
-    ///O-val lenyílás
-    if (in_focus && ev.type==ev_key && ev.keycode=='o')
     {
         if (_dropdown)
         {
@@ -130,31 +91,6 @@ void dropDownBox::handle(event ev)
         _dropdown=false;
     }
 
-    ///Kurzorral lépegetés
-    if (  (  (ev.keycode==key_up) || (ev.keycode==key_down)   ) && _dropdown   )
-    {
-        if (ev.keycode==key_up && b_h>-1)
-        {
-            b_h--;
-            if(b_h<theFirst && theFirst>0)
-            {
-                theFirst--;
-            }
-        }
-        if ((ev.keycode==key_down))
-        {
-            int ennel=v.size()-1;
-            if (b_h<ennel)
-            {
-                b_h++;
-                if (b_h>theFirst+4)
-                {
-                    theFirst++;
-                }
-            }
-        }
-    }
-
     ///Egérrel görgetés
     if ( ev.type==ev_mouse && (ev.button==btn_wheelup || ev.button==btn_wheeldown) && _dropdown  )
     {
@@ -167,13 +103,6 @@ void dropDownBox::handle(event ev)
         {
             theFirst++;
         }
-    }
-
-    ///Enterrel kiválasztás
-    if ( (ev.type==ev_key) && (ev.keycode==key_enter) && (b_h>-1) )
-    {
-        inbox=v[b_h];
-        _dropdown=false;
     }
 }
 
