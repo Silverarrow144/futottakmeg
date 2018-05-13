@@ -15,7 +15,6 @@ class widget
         virtual void draw() = 0;
         virtual void handle(genv::event ev) = 0;
         bool in_focus=false;
-        //char _whichScene;
         char getScene(){return whichScene;}
 
     protected:

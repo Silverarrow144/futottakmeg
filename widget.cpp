@@ -4,9 +4,6 @@ using namespace genv;
 
 widget::widget(int x, int y, int sx, int sy, char _whichScene) : wx(x), wy(y), wsx(sx), wsy(sy), whichScene(_whichScene)
 {
-    r=255;
-    g=255;
-    b=255;
 }
 
 bool widget::is_selected(int mouse_x, int mouse_y)
@@ -19,6 +16,3 @@ void widget::which_hightlited(int mouse_x, int mouse_y)
     int a;
     a=-1;
 }
-
-//void widget::handle(event ev) {
-//}

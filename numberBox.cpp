@@ -25,17 +25,6 @@ void numberBox::draw() {
     }
     tt << cNumber;
 
-    /*
-    ///Szine
-    if(in_focus)
-    {
-        gout << color(r,g,0);
-    }
-    else
-    {
-        gout << color(r,g,b);
-    }*/
-
     ///Doboz + szöveg
     gout << move_to(wx, wy) << box(wsx, wsy);
     gout << move_to(wx+2, wy+2) << color(170,170,170) << box(wsx-4, wsy-4);
