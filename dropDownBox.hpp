@@ -10,7 +10,7 @@
 class dropDownBox : public widget
 {
     public:
-        dropDownBox(int x, int y, int sx, int sy, std::vector<std::string> v);
+        dropDownBox(int x, int y, int sx, int sy, char whichScene, std::vector<std::string> v);
         virtual void draw();
         virtual void handle(genv::event ev);
         virtual bool is_dropdown();

@@ -9,7 +9,7 @@
 class widget
 {
     public:
-        widget(int x, int y, int sx, int sy);
+        widget(int x, int y, int sx, int sy, char whichScene);
         virtual bool is_selected(int mouse_x, int mouse_y);
         virtual void which_hightlited(int mouse_x, int mouse_y);
         virtual void draw() = 0;

@@ -7,7 +7,7 @@
 class numberBox : public widget
 {
     public:
-        numberBox(int x, int y, int sx, int sy, int iMin, int iMax);
+        numberBox(int x, int y, int sx, int sy, char whichScene, int iMin, int iMax);
         virtual void draw();
         virtual void handle(genv::event ev);
         int _cNumber;
