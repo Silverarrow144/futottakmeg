@@ -36,7 +36,7 @@ class mainWindow : public window
     fButton * folytat;
     fButton * ujjatek;
     fButton * mentes;
-    fButton * kilepes;
+    //fButton * kilepes;
 
     ///Menü
     fButton * fom;
@@ -102,14 +102,16 @@ class mainWindow : public window
 
 mainWindow::mainWindow()
 {
+    int x1=640;
+    int y1=380;
     ///Képernyõk
-    f1 = new fomenu(640,480,'F');
-    o1 = new lovarda(640,380,'O');
-    l1 = new legelo(640,380,'L');
-    v1 = new versenypalya(640,380,'V');
-    n1 = new naptar(640,380,'N');
-    b1 = new bolt(640,380,'B');
-    m1 = new menu(0,380,640,100,'M');
+    f1 = new fomenu(x1,480,'F');
+    o1 = new lovarda(x1,y1,'O');
+    l1 = new legelo(x1,y1,'L');
+    v1 = new versenypalya(x1,y1,'V');
+    n1 = new naptar(x1,y1,'N');
+    b1 = new bolt(x1,y1,'B');
+    m1 = new menu(0,380,x1,100,'M');
 
     //cout << f1->tipusa << endl;
     scenes.push_back(f1);
@@ -123,15 +125,39 @@ mainWindow::mainWindow()
     //cout << scenes[0]->
 
     ///Fõmenü widgetei
-    folytat = new fButton(270,80,100,20,'F',"Folytatás",[this](){
-                          this->actualType='O';
-                          });
-    //cout << this->actualType;
+    folytat = new fButton(270,80,100,20,'F',"Folytatás",[this](){this->actualType='O';});
+    ujjatek = new fButton(270,120,100,20,'F',"Új játék",[this](){this->actualType='O';});
+    mentes = new fButton(270,160,100,20,'F',"Mentés",[this](){
+                         //this->actualType='O';
+                         cout << "Itt kell a file-ba iratást meghívni, közvetve";
+                         });
+    //kilepes = new fButton(270,200,100,20,'F',"Kilépés",[this](){this->iNeedToStop=true;cout << this->iNeedToStop;});
+
     widgetek.push_back(folytat);
-    //cout << widgetek[0]->_whichScene;
+    widgetek.push_back(ujjatek);
+    widgetek.push_back(mentes);
+    //widgetek.push_back(kilepes);
 
     ///Lenti menü widgetei
 
+    int menu_sx=140;
+    int menu_sy=20;
+    fom = new fButton(100,400,menu_sx,menu_sy,'M',"Fömenü",[this](){this->actualType='F';});
+    lov = new fButton(250,400,menu_sx,menu_sy,'M',"Lovarda",[this](){this->actualType='O';});
+    leg = new fButton(400,400,menu_sx,menu_sy,'M',"Legelö",[this](){this->actualType='L';});
+    ver = new fButton(100,440,menu_sx,menu_sy,'M',"Versenypálya",[this](){this->actualType='V';});
+    nap = new fButton(250,440,menu_sx,menu_sy,'M',"Naptár",[this](){this->actualType='N';});
+    bol = new fButton(400,440,menu_sx,menu_sy,'M',"Bolt",[this](){this->actualType='B';});
+
+    widgetek.push_back(fom);
+    widgetek.push_back(lov);
+    widgetek.push_back(leg);
+    widgetek.push_back(ver);
+    widgetek.push_back(nap);
+    widgetek.push_back(bol);
+
+
+    //napVege = new fButton();
 
     ///Lovarda widgetei
 
@@ -187,10 +213,10 @@ mainWindow::mainWindow()
 int main()
 {
     event ev;
-    while (gin >> ev){
-    gout.open(640,480);
-    mainWindow *TheWindow = new mainWindow;
-    TheWindow->event_loop();
+    while (gin >> ev ){
+        gout.open(640,480);
+        mainWindow *TheWindow = new mainWindow;
+        TheWindow->event_loop();
     }
     return 0;
 }

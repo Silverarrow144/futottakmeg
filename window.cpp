@@ -6,8 +6,6 @@ using namespace std;
 
 window::window()
 {
-    //widgetek =std::vector<widget*>();
-    //ctor
 }
 
 void window::clear_it()
@@ -18,7 +16,7 @@ void window::clear_it()
 void window::event_loop() {
     event ev;
 
-    while(gin >> ev) {
+    while(gin >> ev){
 
 
     for (size_t i=0;i<widgetek.size();i++){
@@ -27,7 +25,7 @@ void window::event_loop() {
 
         ///Kirajzolás
 
-
+        clear_it();
 
             ///Képernyok
         for (size_t i=0;i<scenes.size();i++) {
@@ -43,9 +41,11 @@ void window::event_loop() {
             ///Widgetek
         for (size_t i=0;i<widgetek.size();i++) {
             if(widgetek[i]->getScene()==actualType){
-            widgetek[i]->draw();
+                widgetek[i]->draw();
             }
-            //cout << widgetek[i]->_whichScene;
+            if(actualType!='F' && widgetek[i]->getScene()=='M'){
+                widgetek[i]->draw();
+            }
         }
 
 
